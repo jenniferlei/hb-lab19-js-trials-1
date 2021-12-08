@@ -109,11 +109,39 @@ def snake_to_camel(string):
 
 
 def longest_word_length(words):
-    pass  # TODO: replace this line with your code
+    """Return the length of the longest word in the given array of words.
+
+    >>> longest_word_length(['hello', 'world'])
+    5
+    >>> longest_word_length(['jellyfish', 'zebra'])
+    9
+    """
+    
+    longest = len(words[0])
+
+    for word in words:
+        if longest < len(word):
+            longest = len(word)
+        
+        return longest
 
 
 def truncate(string):
-    pass  # TODO: replace this line with your code
+    """Truncate repeating characters into one character.
+
+    >>> truncate('aaaabbbbcccca')
+    'abca'
+
+    >>> truncate('hi***!!!! wooow')
+    'hi*! wow'
+    """
+    result = []
+
+    for char in string:
+        if len(result) == 0 or char != result[-1]:
+            result.append(char)
+
+    return "".join(result)
 
 
 def has_balanced_parens(string):
