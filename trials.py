@@ -77,11 +77,35 @@ def get_range(start, stop):
 
 
 def censor_vowels(word):
-    pass  # TODO: replace this line with your code
+    """Given a string, return a string where vowels are replaced with '*'.
+    
+    >>> censor_vowels('hello world')
+    'h*ll* w*rld'
+    """
+    
+    chars = []
+
+    for letter in word:
+        if letter in 'aeiou':
+            chars.append('*')
+        else:
+            chars.append(letter)
+    
+    return ''.join(chars)
 
 
 def snake_to_camel(string):
-    pass  # TODO: replace this line with your code
+    """Given a string in snake case, return a string in upper camel case.
+
+    >>> snake_to_camel('hello_world')
+    'HelloWorld'
+    """
+    camel_case = []
+
+    for word in string.split("_"):
+        camel_case.append(f'{word[0].upper()}{word[1:]}')
+
+    return "".join(camel_case)
 
 
 def longest_word_length(words):
