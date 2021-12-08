@@ -28,7 +28,18 @@ def get_all_evens(nums):
 
 
 def get_odd_indices(items):
-    pass  # TODO: replace this line with your code
+    """Given an array, return all elements at odd numbered indices.
+
+    >>> get_odd_indices([1, 'hello', True, 500])
+    ['hello', 500]
+    """
+    result = []
+
+    for idx in range(len(items)):
+        if idx % 2 != 0:
+            result.append(items[idx])
+    
+    return result
 
 
 def print_as_numbered_list(items):
